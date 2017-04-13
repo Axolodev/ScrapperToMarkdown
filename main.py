@@ -43,6 +43,7 @@ class ActivitySpider(scrapy.Spider):
             soup = BeautifulSoup(page_body)
             soup.body.script.decompose()
             page["html"] = soup.get_text()
+            page["images"] = response.xpath("//img/@src").extract()
         except Exception as e:
             print(e)
         pages.append(page)
@@ -60,5 +61,8 @@ reactor.run()
 
 print("Done. Starting doc-gen")
 for page in pages:
+    page["html"] = re.sub(r"\r|\xa0|\t", "", page["html"])
+    page["html"] = re.sub(r"[ ]+", " ", page["html"])
+    # page["html"] = page["html"].replace("\n", "").replace("\r", "")
     print(page)
     sys.exit()
