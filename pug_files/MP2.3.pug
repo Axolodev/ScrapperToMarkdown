@@ -1,0 +1,9 @@
+
+    extends ../templates/activity_template.pug
+    prepend title
+        | <title>Árboles Endémicos</title>
+
+    block activity_content
+        .mdl-grid
+            .mdl-layout-spacer
+                include:markdown-it pug_files/content/MP2.3/MP2.3.md

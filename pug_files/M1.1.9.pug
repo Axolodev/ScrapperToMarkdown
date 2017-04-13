@@ -1,0 +1,9 @@
+
+    extends ../templates/activity_template.pug
+    prepend title
+        | <title>Conoce_y_viaja</title>
+
+    block activity_content
+        .mdl-grid
+            .mdl-layout-spacer
+                include:markdown-it pug_files/content/M1.1.9/M1.1.9.md

@@ -1,0 +1,9 @@
+
+    extends ../templates/activity_template.pug
+    prepend title
+        | <title>PBIP</title>
+
+    block activity_content
+        .mdl-grid
+            .mdl-layout-spacer
+                include:markdown-it pug_files/content/M9.70/M9.70.md

@@ -1,0 +1,9 @@
+
+    extends ../templates/activity_template.pug
+    prepend title
+        | <title>Ventilación natural cruzada.</title>
+
+    block activity_content
+        .mdl-grid
+            .mdl-layout-spacer
+                include:markdown-it pug_files/content/M4.33/M4.33.md

@@ -1,0 +1,9 @@
+
+    extends ../templates/activity_template.pug
+    prepend title
+        | <title>Vasari</title>
+
+    block activity_content
+        .mdl-grid
+            .mdl-layout-spacer
+                include:markdown-it pug_files/content/M8.64/M8.64.md
