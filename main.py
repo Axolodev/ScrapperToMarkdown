@@ -8,6 +8,7 @@ import sys
 import re
 import scrapy
 import os
+import json
 
 # Filesystem: https://learnpythonthehardway.org/book/ex16.html
 #
@@ -83,15 +84,35 @@ def crawl():
 crawl()
 reactor.run()
 
-print("Done. Starting doc-gen")
+modules = {}
+constant_pug_content = """
+extends ../templates/activity_template.pug
+prepend title
+    | {0}
+
+block activity_content
+    .mdl-grid
+        .mdl-layout-spacer
+            include:markdown-it {1}"""
+
+
+json_output = []
+
+print("Done. Starting doc gen")
 for page in pages:
+    global modules
+    global constant_pug_content
     print("Processing " + page["doc_name"])
+
+    page_json = {}
     # Carpeta donde se guardaran los archivos
     root_folder = "pug_files/"
     # Nombre del archivo que se trabajara en esta iteracion
     filename = page["doc_name"].replace(".html", "").replace(".htm", "")
     # Carpeta donde se guardaran los resultados de esta iteracion
     content_output_path = root_folder + "content/" + filename + "/"
+
+
     if not os.path.exists(content_output_path):
         os.makedirs(content_output_path)
     # Archivo de salida del codigo pug
@@ -112,6 +133,7 @@ for page in pages:
         print(page)
         continue
 
+    # Revisar si la pagina tiene imagenes
     if page.get("images", None) is not None:
         for image in page["images"]:
             # Copiar las imagenes
@@ -122,15 +144,35 @@ for page in pages:
             except Exception as e:
                 pass
 
-    pug_content = """
-    extends ../templates/activity_template.pug
-    prepend title
-        | {0}
 
-    block activity_content
-        .mdl-grid
-            .mdl-layout-spacer
-                include:markdown-it {1}"""
-    pug_content = pug_content.format(page.get("title", page["doc_name"]), content_output_path + filename + ".md")
+    pug_content = constant_pug_content.format(page.get("title", page["doc_name"]), content_output_path + filename + ".md")
 
     pug_file.write(pug_content)
+
+    module_number = re.findall(r'\d+', filename)[0]
+    module_exists = modules.get(module_number) is not None
+
+    module = {}
+
+    if module_exists:
+        module = modules.get(module_number)
+    else:
+        module = {
+                "color":"",
+                "topics": []
+                }
+
+    topics = module["topics"]
+    topics.append(filename)
+    module["topics"] = topics
+
+    modules[module_number] = module
+
+
+print("Modules:")
+for module_number, topics in modules.iteritems():
+    print(module_number)
+    print(topics)
+
+with open("modules.json", "w") as outfile:
+    json.dump(modules, outfile)

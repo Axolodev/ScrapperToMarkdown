@@ -1,9 +1,9 @@
 
-    extends ../templates/activity_template.pug
-    prepend title
-        | <title>Case Study</title>
+extends ../templates/activity_template.pug
+prepend title
+    | <title>Case Study</title>
 
-    block activity_content
-        .mdl-grid
-            .mdl-layout-spacer
-                include:markdown-it pug_files/content/M7.60/M7.60.md
+block activity_content
+    .mdl-grid
+        .mdl-layout-spacer
+            include:markdown-it pug_files/content/M7.60/M7.60.md

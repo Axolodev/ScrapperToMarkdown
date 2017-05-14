@@ -1,9 +1,9 @@
 
-    extends ../templates/activity_template.pug
-    prepend title
-        | <title>La Alhambra de Granada!...</title>
+extends ../templates/activity_template.pug
+prepend title
+    | <title>La Alhambra de Granada!...</title>
 
-    block activity_content
-        .mdl-grid
-            .mdl-layout-spacer
-                include:markdown-it pug_files/content/M1.1.12/M1.1.12.md
+block activity_content
+    .mdl-grid
+        .mdl-layout-spacer
+            include:markdown-it pug_files/content/M1.1.12/M1.1.12.md
