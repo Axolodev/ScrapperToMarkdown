@@ -163,7 +163,7 @@ for page in pages:
                 }
 
     topics = module["topics"]
-    topics.append(filename)
+    topics.append({"file" : filename, "name":"", "image" : "", "description": ""})
     module["topics"] = topics
 
     modules[module_number] = module
