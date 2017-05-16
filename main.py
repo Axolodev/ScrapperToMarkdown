@@ -1,6 +1,7 @@
 from scrapy.linkextractors import LinkExtractor
 from scrapy.crawler import CrawlerProcess, CrawlerRunner
 from twisted.internet import defer, reactor
+from collections import OrderedDict
 from bs4 import BeautifulSoup
 from shutil import copyfile
 import logging
@@ -149,7 +150,7 @@ for page in pages:
 
     pug_file.write(pug_content)
 
-    module_number = re.findall(r'\d+', filename)[0]
+    module_number = re.findall(r'P?\d+', filename)[0]
     module_exists = modules.get(module_number) is not None
 
     module = {}
@@ -158,7 +159,8 @@ for page in pages:
         module = modules.get(module_number)
     else:
         module = {
-                "color":"",
+                "color": "",
+                "name" : "",
                 "topics": []
                 }
 
@@ -168,11 +170,14 @@ for page in pages:
 
     modules[module_number] = module
 
+modules = OrderedDict(sorted(modules.items(), key = lambda e: -10 + int(re.findall(r'\d+', e[0])[0]) if e[0].startswith("P") else int(e[0])))
 
 print("Modules:")
 for module_number, topics in modules.iteritems():
     print(module_number)
     print(topics)
+
+
 
 with open("modules.json", "w") as outfile:
     json.dump(modules, outfile)
