@@ -86,38 +86,26 @@ crawl()
 reactor.run()
 
 modules = {}
-constant_pug_content = """
-extends ../templates/activity_template.pug
-prepend title
-    | {0}
-
-block activity_content
-    .mdl-grid
-        .mdl-layout-spacer
-            include:markdown-it {1}"""
-
 
 json_output = []
 
 print("Done. Starting doc gen")
 for page in pages:
     global modules
-    global constant_pug_content
     print("Processing " + page["doc_name"])
 
     page_json = {}
     # Carpeta donde se guardaran los archivos
-    root_folder = "pug_files/"
+    root_folder = "./"
     # Nombre del archivo que se trabajara en esta iteracion
     filename = page["doc_name"].replace(".html", "").replace(".htm", "")
+    # Identificador del modulo al que pertenece el archivo de esta iteracion
+    module_id = re.findall(r'P?\d+', filename)[0]
     # Carpeta donde se guardaran los resultados de esta iteracion
-    content_output_path = root_folder + "content/" + filename + "/"
-
+    content_output_path = root_folder + "content/" + module_id + "/" + filename + "/"
 
     if not os.path.exists(content_output_path):
         os.makedirs(content_output_path)
-    # Archivo de salida del codigo pug
-    pug_file = open(root_folder + filename + ".pug", "w+");
     # Archivo de salida de texto en formato markdown
     markdown_file = open(content_output_path + filename + ".md", "w+")
 
@@ -128,6 +116,7 @@ for page in pages:
         # Codificar el html a un formato procesable por python antes de imprimirlo
         page["html"] = page["html"].encode("utf-8")
 
+        # Imprimir al archivo
         markdown_file.write(page["html"])
     except Exception as e:
         print("ERROR " + page["doc_name"])
@@ -145,36 +134,30 @@ for page in pages:
             except Exception as e:
                 pass
 
-
-    pug_content = constant_pug_content.format(page.get("title", page["doc_name"]), content_output_path + filename + ".md")
-
-    pug_file.write(pug_content)
-
-    module_number = re.findall(r'P?\d+', filename)[0]
-    module_exists = modules.get(module_number) is not None
+    module_exists = modules.get(module_id) is not None
 
     module = {}
 
     if module_exists:
-        module = modules.get(module_number)
+        module = modules.get(module_id)
     else:
         module = {
                 "color": "",
                 "name" : "",
                 "topics": []
-                }
+            }
 
     topics = module["topics"]
     topics.append({"file" : filename, "name":"", "image" : "", "description": ""})
     module["topics"] = topics
 
-    modules[module_number] = module
+    modules[module_id] = module
 
 modules = OrderedDict(sorted(modules.items(), key = lambda e: -10 + int(re.findall(r'\d+', e[0])[0]) if e[0].startswith("P") else int(e[0])))
 
 print("Modules:")
-for module_number, topics in modules.iteritems():
-    print(module_number)
+for module_id, topics in modules.iteritems():
+    print(module_id)
     print(topics)
 
 
