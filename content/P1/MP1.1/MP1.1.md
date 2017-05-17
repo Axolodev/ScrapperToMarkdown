@@ -193,12 +193,12 @@ http://www.ledcontrols.com.mx/
 
 
 
-[![](./content/P1/MP1.1/matita.gif)]
-[![](./content/P1/MP1.1/matita.gif)]
-[![](./content/P1/MP1.1/matita.gif)]
-[![](./content/P1/MP1.1/OSOPOLAR.gif)]
-[![](./content/P1/MP1.1/beforeandafter.jpg)]
-[![](./content/P1/MP1.1/deforestation_brazil.jpg)]
-[![](./content/P1/MP1.1/CONTA.gif)]
-[![](./content/P1/MP1.1/sugerencias.gif)]
-[![](./content/P1/MP1.1/delfines.jpg)]
+![](./matita.gif)
+![](./matita.gif)
+![](./matita.gif)
+![](./OSOPOLAR.gif)
+![](./beforeandafter.jpg)
+![](./deforestation_brazil.jpg)
+![](./CONTA.gif)
+![](./sugerencias.gif)
+![](./delfines.jpg)

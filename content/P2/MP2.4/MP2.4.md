@@ -141,7 +141,7 @@ console.log('Live reload enabled.');
 // ]]>
 
 ÉXITO EN TUS TAREAS!...
-[![](./content/P2/MP2.4/agua.4.jpg)]
-[![](./content/P2/MP2.4/agua.3.jpg)]
-[![](./content/P2/MP2.4/agua.1.jpg)]
-[![](./content/P2/MP2.4/agua.2.jpg)]
+![](./agua.4.jpg)
+![](./agua.3.jpg)
+![](./agua.1.jpg)
+![](./agua.2.jpg)

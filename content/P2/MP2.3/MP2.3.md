@@ -98,10 +98,10 @@ Fondo Editorial de Nuevo León.  
 
 
 
-[![](./content/P2/MP2.3/endemica.1.JPG)]
-[![](./content/P2/MP2.3/endemica.2.jpg)]
-[![](./content/P2/MP2.3/endemica.3.jpg)]
-[![](./content/P2/MP2.3/Endemica.7.jpg)]
-[![](./content/P2/MP2.3/endemica.5.jpg)]
-[![](./content/P2/MP2.3/Endemica.6.jpg)]
-[![](./content/P2/MP2.3/matchingsquare.4.jpg)]
+![](./endemica.1.JPG)
+![](./endemica.2.jpg)
+![](./endemica.3.jpg)
+![](./Endemica.7.jpg)
+![](./endemica.5.jpg)
+![](./Endemica.6.jpg)
+![](./matchingsquare.4.jpg)

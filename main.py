@@ -128,7 +128,7 @@ for page in pages:
         for image in page["images"]:
             # Copiar las imagenes
             image = image.encode("utf-8")
-            markdown_file.write("[![](" + content_output_path + image + ")]\n")
+            markdown_file.write("![](" + "./" + image + ")\n")
             try:
                 copyfile("/home/robruizr/Documents/moondoreyes.com/public_html/" + image, content_output_path + image)
             except Exception as e:
