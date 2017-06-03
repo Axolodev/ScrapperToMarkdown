@@ -193,12 +193,32 @@ http://www.ledcontrols.com.mx/
 
 
 
-![](./matita.gif)
-![](./matita.gif)
-![](./matita.gif)
-![](./OSOPOLAR.gif)
-![](./beforeandafter.jpg)
-![](./deforestation_brazil.jpg)
-![](./CONTA.gif)
-![](./sugerencias.gif)
-![](./delfines.jpg)
+<div class="mdl-grid">
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/matita.gif'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/matita.gif'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/matita.gif'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/OSOPOLAR.gif'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/beforeandafter.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/deforestation_brazil.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/CONTA.gif'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/sugerencias.gif'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P1/MP1.1/delfines.jpg'>
+</div>
+</div>

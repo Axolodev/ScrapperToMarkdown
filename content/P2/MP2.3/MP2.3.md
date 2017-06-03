@@ -98,10 +98,26 @@ Fondo Editorial de Nuevo León.  
 
 
 
-![](./endemica.1.JPG)
-![](./endemica.2.jpg)
-![](./endemica.3.jpg)
-![](./Endemica.7.jpg)
-![](./endemica.5.jpg)
-![](./Endemica.6.jpg)
-![](./matchingsquare.4.jpg)
+<div class="mdl-grid">
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/endemica.1.JPG'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/endemica.2.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/endemica.3.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/Endemica.7.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/endemica.5.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/Endemica.6.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.3/matchingsquare.4.jpg'>
+</div>
+</div>

@@ -141,7 +141,17 @@ console.log('Live reload enabled.');
 // ]]>
 
 ÉXITO EN TUS TAREAS!...
-![](./agua.4.jpg)
-![](./agua.3.jpg)
-![](./agua.1.jpg)
-![](./agua.2.jpg)
+<div class="mdl-grid">
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.4/agua.4.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.4/agua.3.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.4/agua.1.jpg'>
+</div>
+<div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+<img src='./content/P2/MP2.4/agua.2.jpg'>
+</div>
+</div>

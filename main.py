@@ -123,16 +123,20 @@ for page in pages:
         print(page)
         continue
 
+    markdown_file.write("<div class=\"mdl-grid\">\n")
     # Revisar si la pagina tiene imagenes
     if page.get("images", None) is not None:
         for image in page["images"]:
             # Copiar las imagenes
             image = image.encode("utf-8")
-            markdown_file.write("![](" + "./" + image + ")\n")
+            new_image_name = image.replace(" ", "_")
+            markdown_file.write("<div class=\"mdl-cell mdl-cell--6-col mdl-typography--text-center\">\n<img src='" + content_output_path + new_image_name + "'>\n</div>\n")
             try:
-                copyfile("/home/robruizr/Documents/moondoreyes.com/public_html/" + image, content_output_path + image)
+                copyfile("/home/robruizr/Documents/moondoreyes.com/public_html/" + image, content_output_path + new_image_name)
             except Exception as e:
                 pass
+
+    markdown_file.write("</div>")
 
     module_exists = modules.get(module_id) is not None
 
@@ -159,8 +163,6 @@ print("Modules:")
 for module_id, topics in modules.iteritems():
     print(module_id)
     print(topics)
-
-
 
 with open("modules.json", "w") as outfile:
     json.dump(modules, outfile)
